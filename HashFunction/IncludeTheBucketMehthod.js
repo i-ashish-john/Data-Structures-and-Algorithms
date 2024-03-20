@@ -70,5 +70,5 @@ table.set("name","Ashish");
 table.set("age","25")
 
 console.log(table.get('age'));
-table.set("name","akash");///collotision is happened when i insert a value to the name key
+table.set("name","akash"); ///collotision is happened when i insert a value to the name key
 table.display()           /// which means that the value is overwrite ;   
