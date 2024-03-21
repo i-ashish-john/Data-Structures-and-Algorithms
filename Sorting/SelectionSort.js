@@ -16,6 +16,7 @@ function selectionSort(arr){
 }
 
 
-const arr=[5,4,3,2,1]
+// const arr=[5,4,3,2,1]
+const arr=[90,123,453,6,10,20,11,2,1]
 const pass= selectionSort(arr)
 console.log('pass',pass);
