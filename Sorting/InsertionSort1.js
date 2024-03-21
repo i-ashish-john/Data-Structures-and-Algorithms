@@ -3,7 +3,7 @@ function insertionSort(Array){
         let Ith_value=Array[i]
         let j=i-1
         while(j>=0&&Array[j]>Ith_value){
-            Array[j+1]=Array[j]
+            Array[j+1]=Array[j ]
             j--
         }
         Array[j+1]=Ith_value
