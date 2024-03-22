@@ -1,5 +1,5 @@
 //Ascending method \Bubble sort
-const arr=[5,4,3,2,1]
+const arr=[532,5235,5,0,35,25,-142]
 let value=[];
 console.log('Before inserted:',arr.toString());
   for(let i=0;i<arr.length;i++){
