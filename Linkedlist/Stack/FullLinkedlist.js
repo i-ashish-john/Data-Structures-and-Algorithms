@@ -64,8 +64,12 @@ class LinkedList{  //in here the the operations for the nodes(linkedlist) (eg.in
             console.log('list is empty')
         }else{  
             let current = this.head
-
-            console.log('List values:',current.value);
+             while(current.next){
+                console.log('List values:',current.value);
+                current.next=this.head
+             }
+             current.next=TheNode
+            
         }
     }
 }; 
