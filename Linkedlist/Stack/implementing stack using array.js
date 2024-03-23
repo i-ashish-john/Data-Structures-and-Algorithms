@@ -14,7 +14,9 @@ class Stack{
         }
     }
     getSize(){
-        return this.Array.length-1
+        const count =this.Array.length
+        console.log("size =",count)
+        return count
     }
     print(){
         if(this.isEmpty()){
@@ -30,5 +32,7 @@ stack.push(10)
 stack.push(20)
 stack.push(30)
 stack.pop()
+stack.getSize()
+
 
 stack.print()
