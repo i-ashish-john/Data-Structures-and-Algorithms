@@ -12,7 +12,7 @@ class HashTable{
         }
         return total % this.size
     }
-
+    
     set(key,value){
         const index=this.hash(key)
         this.table[index]=value
@@ -36,6 +36,7 @@ class HashTable{
 }
 
 const table = new HashTable(50)
+// console.log('tabel:',table);
 table.set("name","Ashish");
 table.set("age","25")
 table.display()  
