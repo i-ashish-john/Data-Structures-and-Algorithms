@@ -59,7 +59,7 @@ class LinkedList{  //in here the the operations for the nodes(linkedlist) (eg.in
         this.size--;
         return removeNode; // Add this line to return the removed node
     }    
-    print(){
+    print(){    
         if(this.isEmpty()){
             console.log('list is empty')
         }else{  
