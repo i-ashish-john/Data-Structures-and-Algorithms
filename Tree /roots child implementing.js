@@ -10,7 +10,7 @@ class BinarySearch{
     constructor(){
         this.root=null
     }
-    insert(){
+    insert(){   
         const newnode = new Node()
         if(this.isEmpty()){
              this.root=newnode
@@ -35,6 +35,23 @@ class BinarySearch{
 
     }   
 }
+
+    search(root,value){
+                if(!root){
+                return false
+/* * * * * */    }  else{     /* * * * * */
+                if(root.value==value){
+                    return true
+                }if(value < root.value){
+                    return this.search(root.left,value)
+                }else{
+                    return this.search(root.right,value)
+                }
+
+/* * * * * */   }       /* * * * * */
+
+    }
+
     isEmpty(){
         return this.root===null
     }
@@ -46,3 +63,6 @@ TreeCheck.insert(7)
 TreeCheck.insert(5)
 TreeCheck.insert(3)
     
+        console.log('search',TreeCheck.search(TreeCheck.root,7))
+        console.log('search',TreeCheck.search(TreeCheck.root,5))
+        console.log('search',TreeCheck.search(TreeCheck.root,3))
