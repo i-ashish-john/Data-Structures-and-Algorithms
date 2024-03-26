@@ -58,14 +58,34 @@ class BinarySearch{
             return this.search(root.RHs,value)
         }
     }/////////////////////////////////pre-order method for printing values 
-    preorder(root) {
+    preOrder(root) {
         if (!root) {
             return;
-        }
-        console.log('root is:', root.value);
-        this.preorder(root.LHs);
-        this.preorder(root.RHs);
+        }         //an issue with the code in the preorder method
+
+        this.preOrder(root.LHs);
+        this.preOrder(root.RHs);
+       console.log( root.value);
+
     }////////////////////////////////
+
+    inorder(root){
+        if(root){
+            // return null
+        // }
+        this.inorder(root.LHs)
+        this.inorder(root.RHs)
+        console.log(root.value)
+        }
+    }
+    postOrder(root){
+        if(root){
+            this.postOrder(root.LHs)
+            this.postOrder(root.RHs)
+            console.log(root.value)
+
+        }
+    }
 
     isEmpty(){
         return this.root===null
@@ -73,12 +93,16 @@ class BinarySearch{
 }
 
 const bst= new BinarySearch()
-bst.insert(9)
 bst.insert(10)
-bst.insert(3)
-bst.insert(1)
+bst.insert(5)
 bst.insert(15)
-bst.preorder(bst.root); 
+bst.insert(3)
+bst.insert(7)
+// bst.inorder(bst.root); 
+ bst.postOrder(bst.root)
+
+
+// bst.preOrder(bst.root); 
 // console.log(bst.search(bst.root,30))
 // console.log(bst.search(bst.root,10))
 
