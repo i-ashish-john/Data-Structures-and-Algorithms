@@ -1,3 +1,5 @@
+//searching and insertion 
+
 class Node{
     constructor(value){
         this.value=value

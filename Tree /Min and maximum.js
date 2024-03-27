@@ -1,3 +1,5 @@
+//insertion,searching,deleting,minimum and maximum finding 
+
 class Node {
     constructor(value) {
       this.value = value;
