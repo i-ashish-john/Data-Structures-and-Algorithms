@@ -112,5 +112,5 @@ class Node {
   console.log('search', TreeCheck.search(TreeCheck.root, 7));
   console.log('search', TreeCheck.search(TreeCheck.root, 5));
   console.log('search', TreeCheck.search(TreeCheck.root, 3));
-  console.log('Minimum value:', TreeCheck.findMin(TreeCheck.root));
-  console.log('Maximum value:', TreeCheck.findMax(TreeCheck.root));
+  console.log('Minimum value:', TreeCheck.findMin(TreeCheck.root));// finding the minimum
+  console.log('Maximum value:', TreeCheck.findMax(TreeCheck.root));// finding the maximum
