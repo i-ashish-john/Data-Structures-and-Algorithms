@@ -38,7 +38,7 @@ class MaxHeap {
     return maxValue;
   }
 
-  // Return the maximum value without removing it from the heap
+  // Return the maximum   value without removing it from the heap
   peek() {
     // If the heap is empty, return undefined
     if (this.heap.length === 0) {
@@ -60,7 +60,7 @@ class MaxHeap {
     if (parentIndex < 0 || this.heap[parentIndex] >= this.heap[index]) {
       return;
     }
-    
+
     // Swap the value with its parent
     [this.heap[parentIndex], this.heap[index]] = [this.heap[index], this.heap[parentIndex]];
 
