@@ -21,11 +21,11 @@ class MaxHeap {
     }
 
     // Store the root value (maximum value)
-    const maxValue = this.heap[0];
+    const maxValue = this.heap[0];  
 
     // Replace the root with the last value in the heap
     this.heap[0] = this.heap.pop();
-
+    // console.log('QEQEQEWQWQWQEW:',this.heap[0])
     // If there are more than one element left in the heap
     if (this.heap.length > 0) {
       // Bubble down the new root value to maintain the max heap property
@@ -68,10 +68,14 @@ class MaxHeap {
   heapifyDown(index) {
     // Calculate the indices of the left and right children
     const leftChildIndex = 2 * index + 1;
+    console.log("THE LEFT IS ",leftChildIndex);
     const rightChildIndex = 2 * index + 2;
+    console.log("THE right IS ",rightChildIndex);
+
 
     // Initialize the largest index as the current index
     let largestIndex = index;
+    console.log("THE LARGEST INDEXX: ",largestIndex);
 
     // If the left child exists and is larger than the current value
     if (leftChildIndex < this.heap.length && this.heap[leftChildIndex] > this.heap[largestIndex]) {
