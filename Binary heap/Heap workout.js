@@ -1,4 +1,4 @@
-//basic implementation of the binary heap 
+//basic implementation of the binary heap (! used GPT for self learning )
 class MaxHeap {
   constructor() {
     this.heap = [];
@@ -8,9 +8,11 @@ class MaxHeap {
   insert(value) {
     // Add the new value to the end of the heap
     this.heap.push(value);
+    // console.log('ARRAY first:',this.heap)
 
     // Bubble up the new value to maintain the max heap property
     this.heapifyUp(this.heap.length - 1);
+    // console.log('ARRAY second:',this.heap)
   }
 
   // Remove and return the maximum value from the heap
@@ -25,7 +27,7 @@ class MaxHeap {
 
     // Replace the root with the last value in the heap
     this.heap[0] = this.heap.pop();
-    // console.log('QEQEQEWQWQWQEW:',this.heap[0])
+    console.log('QEQEQEWQWQWQEW:',this.heap[0],'THE ARRAY WAS:',this.heap)
     // If there are more than one element left in the heap
     if (this.heap.length > 0) {
       // Bubble down the new root value to maintain the max heap property
@@ -48,9 +50,11 @@ class MaxHeap {
   }
 
   // Bubble up a value at a given index to maintain the max heap property
-  heapifyUp(index) {
+  heapifyUp(index) {//maintainig the heap structure when the new element is added
     // Calculate the parent index
+    console.log('THE I N  D E X I S =',index)
     const parentIndex = Math.floor((index - 1) / 2);
+    console.log('PARENT INDEX IS',parentIndex);
 
     // If the parent index is out of bounds or the value is in the correct position
     if (parentIndex < 0 || this.heap[parentIndex] >= this.heap[index]) {
@@ -58,6 +62,7 @@ class MaxHeap {
     }
 
     // Swap the value with its parent
+    console.log('+)',[this.heap[parentIndex], this.heap[index]] = [this.heap[index], this.heap[parentIndex]]);
     [this.heap[parentIndex], this.heap[index]] = [this.heap[index], this.heap[parentIndex]];
 
     // Recursively bubble up the swapped value
@@ -65,7 +70,7 @@ class MaxHeap {
   }
 
   // Bubble down a value at a given index to maintain the max heap property
-  heapifyDown(index) {
+  heapifyDown(index) {//mainaitaining the heap structure whent then the root element is deleted
     // Calculate the indices of the left and right children
     const leftChildIndex = 2 * index + 1;
     console.log("THE LEFT IS ",leftChildIndex);
@@ -90,12 +95,13 @@ class MaxHeap {
     // If the current value is not the largest
     if (largestIndex !== index) {
       // Swap the current value with the largest child
-      [this.heap[index], this.heap[largestIndex]] = [this.heap[largestIndex], this.heap[index]];
+      [this.heap[index], this.heap[largestIndex]] = [this.heap[largestIndex], this.heap[index]];//swapping
 
       // Recursively bubble down the swapped value
       this.heapifyDown(largestIndex);
     }
   }
+
 }
 
 // Example usage:
