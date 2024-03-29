@@ -60,9 +60,8 @@ class MaxHeap {
     if (parentIndex < 0 || this.heap[parentIndex] >= this.heap[index]) {
       return;
     }
-
+    
     // Swap the value with its parent
-    console.log('+)',[this.heap[parentIndex], this.heap[index]] = [this.heap[index], this.heap[parentIndex]]);
     [this.heap[parentIndex], this.heap[index]] = [this.heap[index], this.heap[parentIndex]];
 
     // Recursively bubble up the swapped value
