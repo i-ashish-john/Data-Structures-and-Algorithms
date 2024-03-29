@@ -72,9 +72,9 @@ class MaxHeap {
   heapifyDown(index) {//mainaitaining the heap structure whent then the root element is deleted
     // Calculate the indices of the left and right children
     const leftChildIndex = 2 * index + 1;
-    console.log("THE LEFT IS ",leftChildIndex);
+    // console.log("THE LEFT IS ",leftChildIndex);
     const rightChildIndex = 2 * index + 2;
-    console.log("THE right IS ",rightChildIndex);
+    // console.log("THE right IS ",rightChildIndex);
 
 
     // Initialize the largest index as the current index
