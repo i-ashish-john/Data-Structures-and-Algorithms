@@ -55,12 +55,16 @@ class TrieNode {
   
     findNode(prefix) {
       let node = this.root;
+
       for (const char of prefix) {
+
         if (!node.children[char]) {
           return null;
         }
+
         node = node.children[char];
       }
+    
       return node;
     }
   
@@ -68,6 +72,8 @@ class TrieNode {
       if (node.isEndOfWord) {
         suggestions.push(...node.suggestions);
       }
+
+      
       for (const char in node.children) {
         this.collectSuggestions(node.children[char], suggestions);
       }
