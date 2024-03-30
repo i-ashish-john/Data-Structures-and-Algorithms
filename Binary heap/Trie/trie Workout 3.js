@@ -10,6 +10,7 @@ class trie{
         this.root=new trieNode()
 
     }
+
     insert(word){
          let node = this.root
 
@@ -23,6 +24,7 @@ class trie{
          }
          node.isWordEnd=true
      }
+
      search(word){
         let node =this.root
         for(let i=0;i<word.length;i++){
@@ -36,6 +38,7 @@ class trie{
         }
         return node.children[char]
      }
+     
      search(prefix){
         let node = this.root
         for(let i=0;i<prefix.length;i++){

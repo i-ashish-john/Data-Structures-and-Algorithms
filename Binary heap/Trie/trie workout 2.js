@@ -46,6 +46,7 @@ class trie{
             }
             node = node.children[char]
         }
+        return true
 
     }
 
@@ -59,7 +60,8 @@ trier.insert('dog')
 trier.insert('elephant')
 trier.insert('fridge')
 
-console.log("result is :",trier.search('Ball'));
+console.log('Element found =',trier.search('App'))
+console.log("samePrefix is found  :",trier.startswith('App'));
 
 
 
