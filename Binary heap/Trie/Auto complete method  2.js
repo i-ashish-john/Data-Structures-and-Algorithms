@@ -2,7 +2,7 @@ class TrieNode{
     constructor(){
         this.children={}
         this.isEndWord=false
-        this.sample=[]
+        this.suggestion=[]
     }
 }
 
@@ -10,32 +10,32 @@ class trie{
 constructor(){
     this.root = new TrieNode()
 }
-insert(word){
- let node= this.root
+    insert(word) {
+        let node = this.root
 
- for(let i=0;i<word.length;i++){
-    const char=word[i]
-    if(!node.children[char]){
-        node.children[char]=new TrieNode()
-    } 
- }
- node.isEndWord=true
- node.sample.push(word)
-}
-
-search(prefix){
-let node = node.children[char]
-
- for(let i=0;i<prefix.length;i++){
-    const char = prefix[i]
-
-    if(!node.children[char]){
-        return false
+        for (let i = 0; i < word.length; i++) {
+            const char = word[i]
+            if (!node.children[char]) {
+                node.children[char] = new TrieNode()
+            }
+        }
+        node.isEndWord = true
+        node.suggestion.push(word)
     }
-    return node.isEndWord
- }
 
-}
+    search(prefix) {
+        let node = this.root;
+
+        for (let i = 0; i < prefix.length; i++) {
+            const char = prefix[i];
+            if (!node.children[char]) {
+                return false;
+            }
+            node = node.children[char];
+        }   
+        return node.isEndWord; 
+    }
+
 autocomplete(prefix){
  let node= this.findNode(prefix)
  if(!node){
@@ -60,21 +60,21 @@ return node
 
 }
 
-collectSuggestion(node,sample=[]){
-if(!node.isEndWord){
-    sample.push(...node.sample)
-}
- 
-for(let i=0;i<node.children.length; i++){//
-    const char = node.children[i]
-    if(node.children[char]){
-        node=node.children[char]
-       this.collectSuggestion(node,sample)
-    }
-}
- return sample
+    collectSuggestion(node, sample) {   
+        if (node.isEndWord) {
+            sample.push(...node.suggestion)
+        }
 
-}
+        for (const char in node.children) { 
+            // const char = node.children[i]
+            // if (node.children[char]) {
+                this.collectSuggestion(node.children[char],sample);
+            // }
+        }
+        console.log('ewrwrwr = ',sample)
+        return sample
+        
+    }
 
 }
 const the = new trie()
@@ -85,4 +85,4 @@ the.insert('dolphin')
 the.insert('elevator')
 the.insert('flight')
 
-the.autocomplete('f')
+console.log('Result =',the.autocomplete('f'));
