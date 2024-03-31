@@ -18,6 +18,7 @@ class Trie {
         node.children[char] = new TrieNode();
       }
       node = node.children[char];
+      // console.log("iiuit",node);
     }
     node.isEndOfWord = true;
     node.suggestions.push(word); // Store the word for autocomplete
@@ -69,15 +70,16 @@ class Trie {
   }
 
   collectSuggestions(node, suggestions = []) {
+  console.log("THe node is =",node);
     if (node.isEndOfWord) {
-      // console.log('the word =',node.suggestions);
       suggestions.push(...node.suggestions);
     }
 
-
-    for (const char in node.children) {
+    for (const char in node.children) {//here node is this.root!
       this.collectSuggestions(node.children[char], suggestions);
+      // console.log('<Suggestion> = ',suggestions); 
     }
+
     return suggestions;
   }
 
@@ -86,12 +88,12 @@ class Trie {
 // Example usage:
 const trie = new Trie();
 trie.insert("apple");
-trie.insert("app");
+// trie.insert("app");
 trie.insert("banana");
 trie.insert("car");
 trie.insert("cat");
 trie.insert("cape");
 
-console.log(trie.autocomplete("ap")); // Output: ["apple", "ape"]
-console.log(trie.autocomplete("ca")); // Output: ["car", "cat", "cape"]
-console.log(trie.autocomplete("xyz")); // Output: []
+console.log('Final result is = ',trie.autocomplete("app")); // Output: ["apple", "ape"]
+console.log('Final result is = ',trie.autocomplete("b")); // Output: ["car", "cat", "cape"]
+console.log('Final result is = ',trie.autocomplete("xyz")); // Output: []
