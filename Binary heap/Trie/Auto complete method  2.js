@@ -10,6 +10,7 @@ class trie{
 constructor(){
     this.root = new TrieNode()
 }
+
     insert(word) {
         let node = this.root
 
@@ -18,6 +19,7 @@ constructor(){
             if (!node.children[char]) {
                 node.children[char] = new TrieNode()
             }
+            node=node.children[char]
         }
         node.isEndWord = true
         node.suggestion.push(word)
@@ -60,7 +62,7 @@ return node
 
 }
 
-    collectSuggestion(node, sample) {   
+    collectSuggestion(node, sample=[]) {   
         if (node.isEndWord) {
             sample.push(...node.suggestion)
         }
@@ -71,7 +73,7 @@ return node
                 this.collectSuggestion(node.children[char],sample);
             // }
         }
-        console.log('ewrwrwr = ',sample)
+        // console.log('ewrwrwr = ',sample)
         return sample
         
     }
@@ -85,4 +87,4 @@ the.insert('dolphin')
 the.insert('elevator')
 the.insert('flight')
 
-console.log('Result =',the.autocomplete('f'));
+console.log('Result =',the.autocomplete('a'));
