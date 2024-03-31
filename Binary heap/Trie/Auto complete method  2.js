@@ -66,7 +66,6 @@ return node
         if (node.isEndWord) {
             sample.push(...node.suggestion)
         }
-
         for (const char in node.children) { 
             // const char = node.children[i]
             // if (node.children[char]) {
