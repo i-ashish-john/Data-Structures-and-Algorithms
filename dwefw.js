@@ -25,7 +25,7 @@ class Graph {
         if (!visited.has(neighbor)) {
           this.dfsHelper(neighbor, visited);
         }
-      });
+      }); 
     }
   }
   
