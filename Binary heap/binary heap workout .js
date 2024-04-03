@@ -22,7 +22,7 @@ class maxHeap{
       delete(){
         this.heap[0]=this.heap.pop()
         if(this.heap.length>0){
-          this.heapifyDown(0)
+          this.heapifyDown(0) 
         }
       }
 
