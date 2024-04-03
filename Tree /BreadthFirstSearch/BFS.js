@@ -43,7 +43,7 @@ class Node {
       if (root.value === value) {
         return true;
       } else if (value < root.value) {
-        return this.search(root.LHs, value);
+          return this.search(root.LHs, value);
       } else {
         return this.search(root.RHs, value);
       }
