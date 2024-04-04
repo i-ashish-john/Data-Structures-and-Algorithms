@@ -58,7 +58,7 @@ class Node {
     }
   
     insertRecursively(value, currentNode) {
-      if (!currentNode) {
+      if (!currentNode){ 
         // console.log('qwrwerw  = ',new Node(value))
         return new Node(value);
       }
@@ -76,16 +76,16 @@ class Node {
   }
   
   const tree = new BinarySearchTree();
-  tree.insert(10);
-  tree.insert(5);
-  tree.insert(15);
-  tree.insert(2);
-  tree.insert(7);
-  tree.insert(12);
-  tree.insert(20);
+  // tree.insert(10);
+  // tree.insert(5);
+  // tree.insert(15);
+  // tree.insert(2);
+  // tree.insert(7);
+  // tree.insert(12);
+  // tree.insert(20);
   
   console.log('Level order traversal:');
-  tree.levelOrder();
+  // tree.levelOrder();
   
   console.log('Recursive insert:');
   tree.insertRecursively(8);
