@@ -51,9 +51,11 @@ class Node {
   tree.root.right = new Node(3);
   tree.root.right.left = new Node(4);
   tree.root.right.left.right = new Node(5);
+  tree.root.right.left.right.left = new Node(6);
+
   
   // Inorder traversal
-  tree.inorder(tree.root); // 2 1 3
+  tree.postorder(tree.root); // 2 1 3
   
   // Preorder traversal
   // tree.preorder(tree.root); // 1 2 3
