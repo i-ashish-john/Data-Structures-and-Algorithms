@@ -61,10 +61,23 @@ class Depthfirst{
             }
         }
         _postorder(currentNode){///post order (LRN) subtrees left right then root ,
-            if()
-
+            if(currentNode.left!== null){
+                this._postorder(currentNode.left)
+            }
+            if(currentNode.right!== null){
+                this._postorder(currentNode.right)
+            }
+            console.log(currentNode.value)
         }
 
 }
 
 const DFS=new Depthfirst()
+DFS.insert(1)
+DFS.insert(2)
+DFS.insert(3)
+DFS.insert(4)
+DFS.insert(5)
+DFS.insert(6)
+
+DFS.postorder()
