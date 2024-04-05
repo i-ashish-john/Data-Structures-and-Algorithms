@@ -13,18 +13,20 @@ class Node {
   
     // Inorder traversal
     inorder(node) {                     //          
-      if (node !== null) {              //
+      if (node !== null) {               //
         this.inorder(node.left);           
         console.log(node.value);            
-        this.inorder(node.right);       
-      }                                 
+        this.inorder(node.right); 
+        return node.value      
+      }  
+      return null                               
     }                                   //     inorder method
                                         //       ----------------- 
-                                        //                     1
-                                        //                    / \     * parent ->left->right
-                                        //                   2   3        then left->right continue
-                                        //                  / \   \    * output is = 123456
-                                        //                 4   5   6  
+                                        //                      1
+                                        //                     / \     * parent ->left->right
+                                        //                    2   3        then left->right continue
+                                        //                       / \       * output is = 123456
+                                        //                      4   5    
     // Preorder traversal
     preorder(node) {
       if (node !== null) {
@@ -49,12 +51,14 @@ class Node {
   tree.root = new Node(1);
   tree.root.left = new Node(2);
   tree.root.right = new Node(3);
+  tree.root.right.left = new Node(4);
+  tree.root.right.left.right = new Node(5);
   
   // Inorder traversal
   tree.inorder(tree.root); // 2 1 3
   
   // Preorder traversal
-  tree.preorder(tree.root); // 1 2 3
+  // tree.preorder(tree.root); // 1 2 3
   
   // Postorder traversal
-  tree.postorder(tree.root); // 2 3 1
+  // tree.postorder(tree.root); // 2 3 1
