@@ -12,14 +12,12 @@ class Node {
     }
   
     // Inorder traversal
-    inorder(node) {                     //          
-      if (node !== null) {               //
+    inorder(node) {                               
+      if (node !== null) {               
         this.inorder(node.left);           
         console.log(node.value);            
         this.inorder(node.right); 
-        return node.value      
       }  
-      return null                               
     }                                   //     inorder method
                                         //       ----------------- 
                                         //                      1
@@ -36,7 +34,7 @@ class Node {
       }
     }
   
-    // Postorder traversal
+    // Postorder -  
     postorder(node) {
       if (node !== null) {
         this.postorder(node.left);
