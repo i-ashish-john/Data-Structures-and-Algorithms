@@ -2,7 +2,7 @@ class binaryHeap{
     constructor(){
         this.heap=[]
     }
-    peek(){// fecthing the root values 
+    peek(){// fetching the root values 
         if(this.heap.length===0){
             return undefined
         }
