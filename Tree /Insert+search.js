@@ -74,9 +74,13 @@ class BinarySearch{
             return this.search(root.RHs,value)
         }
     }   
-    
-    //minimum 
+
+      //minimum 
     min(TheRoot){
+        if(!TheRoot){
+            return null
+        }
+
         if(!TheRoot.left){
             return TheRoot
         }else{
@@ -84,8 +88,11 @@ class BinarySearch{
         }
     }
 
-    //maximum 
+      //maximum 
     max(root){
+        if(!root){
+            return null
+        }
         if(!root.right){
             return root
         }else{
