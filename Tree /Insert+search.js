@@ -73,7 +73,26 @@ class BinarySearch{
         }else{                               // 
             return this.search(root.RHs,value)
         }
+    }   
+    
+    //minimum 
+    min(TheRoot){
+        if(!TheRoot.left){
+            return TheRoot
+        }else{
+           return this.min(TheRoot.left)
+        }
     }
+
+    //maximum 
+    max(root){
+        if(!root.right){
+            return root
+        }else{
+           return this.max(root.right)
+        }
+    }
+
     isEmpty(){
         return this.root===null
     }
@@ -86,3 +105,6 @@ bst.insert(30)
 
 console.log(bst.search(bst.root,30))
 console.log(bst.search(bst.root,10))
+
+console.log('minimum value is  = ',bst.min(bst.root.value));
+console.log('maximum values is  = ',bst.max(bst.root.value))
