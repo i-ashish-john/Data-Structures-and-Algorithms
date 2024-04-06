@@ -29,7 +29,7 @@ class Depthfirst{
         }else{
             if(currentNode.right===null){
                 currentNode.right=node
-            }else{
+            }else{  
                 this.insertNode(currentNode.right,node)
             }
         }   
