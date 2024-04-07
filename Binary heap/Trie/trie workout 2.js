@@ -60,7 +60,7 @@ trier.insert('elephant')
 trier.insert('fridge')
 
 console.log('Element found =',trier.search('ele-phant'))
-console.log("samePrefix is found  :",trier.startswith('App'));
+console.log("samePrefix is found  :",trier.startswith('f'));//fridge
 
 
 
