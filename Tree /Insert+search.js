@@ -89,7 +89,7 @@ class BinarySearch{
     }
 
       //maximum 
-    max(root){
+    max(root){  
         if(!root){
             return null
         }
