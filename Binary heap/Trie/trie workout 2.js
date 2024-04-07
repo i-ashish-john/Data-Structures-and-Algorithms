@@ -29,8 +29,7 @@ class trie{
             if(!node.children[char]){
                 return false;
             }
-            node=node.children[char]
-            
+            node=node.children[char]  
         }
         return  node.isWordEnd// console.log("founded ,",);
         // return node.isWordEnd;
@@ -60,7 +59,7 @@ trier.insert('dog')
 trier.insert('elephant')
 trier.insert('fridge')
 
-console.log('Element found =',trier.search('App'))
+console.log('Element found =',trier.search('ele-phant'))
 console.log("samePrefix is found  :",trier.startswith('App'));
 
 
