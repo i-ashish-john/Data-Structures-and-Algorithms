@@ -31,7 +31,7 @@ class trie{
             }
             node=node.children[char]  
         }
-        return  node.isWordEnd// console.log("founded ,",);
+        return  node.isWordEnd//printing the last section(true or false ) of the  node which is true               // console.log("founded ,",);
         // return node.isWordEnd;
     }
 
