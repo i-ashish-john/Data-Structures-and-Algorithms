@@ -11,16 +11,49 @@
     }
 
     insert(word){
+        let root=this.root
+
         for(let i=0;i<word.length;i++){
             const char = word[i]
-            if(!this.children[char]){
-                this.root=new Node()
+            if(!root.children[char]){
+                root.children[char]=new Node()
             }
-            this.root=this.children[char]
+            root=root.children[char]
         }
-        this.root.WordEnd=true
+        root.WordEnd=true
     }
+
+    search(word){
+        let root=this.root
+        for(let i=0;i<word.length;i++){
+            const value= word[i]
+            if(!root.children[value]){
+                root.children[value]=new Node()
+            }
+            root=root.children[value]
+        }
+        return root.WordEnd
+    }
+
+    startwith(prefix){
+        let root= this.root
+        for(let i=0;i<prefix.length;i++){
+            const
+        }
+    }
+
+
 
  }
 
- const trieNode= new trie()
+ const trieNode = new tire()
+ trieNode.insert('apple')
+ trieNode.insert('orange')
+ trieNode.insert('grapes')
+ trieNode.insert('banana')
+ trieNode.insert('jackfruit')
+ trieNode.insert('pineapple')
+ trieNode.insert('watermelon')
+
+ console.log(trieNode.search('apple'))
+ console.log();
