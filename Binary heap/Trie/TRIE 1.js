@@ -18,6 +18,7 @@
             }
             this.root=this.children[char]
         }
+        this.root.WordEnd=true
     }
 
  }
