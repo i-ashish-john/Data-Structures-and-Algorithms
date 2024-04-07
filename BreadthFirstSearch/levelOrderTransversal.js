@@ -41,8 +41,9 @@ class BinarySearchTree {
   levelOrder() {
       const queue = [];
       queue.push(this.root);
+      
       while (queue.length > 0) {
-        console.log('length of the queue is = ',queue.length);
+        // console.log('length of the queue is = ',queue.length);
           const currentNode = queue.shift();
           console.log('current node in the level order = ',currentNode.value);
           if (currentNode.left) {

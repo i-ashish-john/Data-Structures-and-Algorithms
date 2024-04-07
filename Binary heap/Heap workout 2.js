@@ -23,7 +23,6 @@ class binaryHeap{
             [this.heap[parentNode], this.heap[index]] = [this.heap[index], this.heap[parentNode]];
             this.bubbleUp(parentNode);
           }
-
     }
 
     delete(){
@@ -32,8 +31,8 @@ class binaryHeap{
         this.heap[0]=lastelement
         this.bubbleDown(0)
       }
-    }
-    
+    }   
+   
     bubbleDown(value){
         let leftIndex= 2*value+1
         let rightIndex=2*value+2
@@ -49,9 +48,8 @@ class binaryHeap{
             [this.heap[value],this.heap[rootValue]]=[this.heap[rootValue],this.heap[value]]
             this.bubbleDown(rootValue)
         }
-
-    }       
-
+    }
+    
 }
 const structure= new binaryHeap()
 structure.insert(10)
