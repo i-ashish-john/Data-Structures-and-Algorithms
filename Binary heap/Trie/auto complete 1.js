@@ -27,6 +27,27 @@ class trie{
         root.EndWord=true
     }
 
+
+    autocomplete(prefix){
+        const node=this.findNode(prefix)
+        if(!node){
+            return null
+        }
+    }
+
+    findNode(prefix){
+        const node =  this.root
+        for(let i=0;i<prefix.length;i++){
+            const char=prefix[i]
+            if(!node.chilren[char]){
+                return null
+            }
+            node=node.children[char]
+
+        }
+        return
+
+    }
     
 }
 const tire = new trie()

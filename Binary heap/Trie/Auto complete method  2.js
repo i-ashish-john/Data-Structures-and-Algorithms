@@ -38,44 +38,39 @@ constructor(){
         return node.isEndWord; 
     }
 
-autocomplete(prefix){
- let node= this.findNode(prefix)
- if(!node){
-    return []
-}
-return this.collectSuggestion(node)
-
-}
-
-findNode(prefix){
-let node =this.root
-
-for(let i=0;i<prefix.length;i++){
-    const char = prefix[i]
-
-    if(!node.children[char]){
-        return null
-    }
-    node = node.children[char]
-}
-return node 
-
-}
-
-    collectSuggestion(node, sample=[]) {   
-        if (node.isEndWord) {
-            sample.push(...node.suggestion)
+        autocomplete(prefix){
+        let node= this.findNode(prefix)
+        if(!node){
+            return []
         }
-        for (const char in node.children) { 
-            // const char = node.children[i]
-            // if (node.children[char]) {
-                this.collectSuggestion(node.children[char],sample);
-            // }
+        return this.collectSuggestion(node)
         }
-        // console.log('ewrwrwr = ',sample)
-        return sample
-        
+
+    findNode(prefix){
+    let node =this.root
+
+    for(let i=0;i<prefix.length;i++){
+        const char = prefix[i]
+
+        if(!node.children[char]){
+            return null
+        }
+        node = node.children[char]
     }
+    return node 
+    }
+
+
+collectSuggestion(node, sample=[]) {
+    if (node.isEndWord) {   
+        sample.push(...node.suggestion)
+    }
+    for (const char in node.children){ 
+        this.collectSuggestion(node.children[char],sample);
+    }        
+    return sample   
+}
+
 //    ------ // print word as array method-------//--------
     // printWords(node = this.root, currentWord = "", result=[]) {
     //     if(node.isEndWord) {
@@ -91,6 +86,7 @@ return node
 }
 const the = new trie()
 the.insert('apple')
+the.insert('appy juice')
 the.insert('ballon')
 the.insert('carrot')
 the.insert('dolphin')
