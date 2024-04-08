@@ -24,6 +24,7 @@
     }
 
     search(word){
+        
         let root=this.root
         for(let i=0;i<word.length;i++){
             const value= word[i]
@@ -32,15 +33,23 @@
             }
             root=root.children[value]
         }
-        return root.WordEnd
+
+       return root.WordEnd
     }
 
-    // startwith(prefix){
-    //     let root= this.root
-    //     for(let i=0;i<prefix.length;i++){
-    //         const
-    //     }
-    // }
+    startwith(prefix){
+        let root= this.root
+        for(let i=0;i<prefix.length;i++){
+            const char = prefix[i]
+
+            if(!root.children[char]){
+                return false
+            }
+
+            root = root.children[char]
+        }
+        return true
+    }
 
 
 
@@ -52,8 +61,9 @@
  trieNode.insert('grapes')
  trieNode.insert('banana')
  trieNode.insert('jackfruit')
+ trieNode.insert('jacky chan')
  trieNode.insert('pineapple')
  trieNode.insert('watermelon')
 
  console.log(trieNode.search('apple'))
- console.log();
+ console.log(trieNode.startwith('ja'));

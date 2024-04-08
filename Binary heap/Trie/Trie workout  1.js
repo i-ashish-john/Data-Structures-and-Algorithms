@@ -59,7 +59,7 @@ const triertrie = new Trie();
 trie.insert('apple');
 trie.insert('banana');
 trie.insert('car');
-trie.insert('cat');
+trie.insert('cat'); 
 
 // Search for a word
 console.log(trie.search('apple')); // Output: true

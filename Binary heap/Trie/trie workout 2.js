@@ -58,6 +58,7 @@ trier.insert('cat')
 trier.insert('dog')
 trier.insert('elephant')
 trier.insert('fridge')
+trier.insert('flight')
 
 console.log('Element found =',trier.search('ele-phant'))
 console.log("samePrefix is found  :",trier.startswith('f'));//fridge
