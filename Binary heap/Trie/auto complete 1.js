@@ -2,6 +2,7 @@ class  Node{
     constructor(){
    this.childrens={}
    this.EndWord=false
+   this.suggestion=[]
     }
 }
 
@@ -29,29 +30,34 @@ class trie{
 
 
     autocomplete(prefix){
-        const node=this.findNode(prefix)
+        let node=this.findNode(prefix)
         if(!node){
-            return null
+            return []
         }
         this.collectSuggestions(node)
     }
 
     findNode(prefix){
-        const node =  this.root
+        let node = this.root
         for(let i=0;i<prefix.length;i++){
             const char=prefix[i]
-            if(!node.chilren[char]){
+            if(!node.childrens[char]){
                 return null
             }
-            node=node.children[char]
-
+            node=node.childrens[char]
         }
         return node
-
     }
 
     collectSuggestions(node,sample=[]){
-    
+    if(node.EndWord){
+       sample.push(...node.suggestion)
+    }
+    for(const char in node.childrens){
+        this.collectSuggestions(node.childrens[char],)
+    }
+    return sample
+
     }
     
 }
@@ -59,3 +65,5 @@ const tire = new trie()
 tire.insert('apple')
 tire.insert('appy juice')
 tire.insert('elephant soop')
+console.log('After auto complete = ',tire.autocomplete('app'));
+
