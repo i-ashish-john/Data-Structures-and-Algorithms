@@ -33,6 +33,7 @@ class trie{
         if(!node){
             return null
         }
+        this.
     }
 
     findNode(prefix){
@@ -45,8 +46,12 @@ class trie{
             node=node.children[char]
 
         }
-        return
+        return node
 
+    }
+
+    collectSuggestions(node,sample=[]){
+        
     }
     
 }
