@@ -33,7 +33,7 @@ class trie{
         if(!node){
             return null
         }
-        this.
+        this.collectSuggestions(node)
     }
 
     findNode(prefix){
@@ -51,7 +51,7 @@ class trie{
     }
 
     collectSuggestions(node,sample=[]){
-        
+    
     }
     
 }

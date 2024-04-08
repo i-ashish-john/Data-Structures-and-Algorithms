@@ -49,7 +49,7 @@ constructor(){
 
     findNode(prefix){
     let node =this.root
-    for(let i=0;i<prefix.length;i++){
+    for(let i=0;i<prefix.length;i++){   
         const char = prefix[i]
         if(!node.children[char]){
             return null
@@ -59,7 +59,7 @@ constructor(){
     return node 
     }
 
-    
+
 collectSuggestion(node, sample=[]) {
     if (node.isEndWord) {   
         sample.push(...node.suggestion)
