@@ -77,16 +77,16 @@ return node
         
     }
 //    ------ // print word as array method-------//--------
-    printWords(node = this.root, currentWord = "", result=[]) {
-        if(node.isEndWord) {
-            result.push(currentWord);
-        }
+    // printWords(node = this.root, currentWord = "", result=[]) {
+    //     if(node.isEndWord) {
+    //         result.push(currentWord);
+    //     }
     
-        for(let char in node.children) {
-            this.printWords(node.children[char], currentWord + char, result);
-        }
-        return result;
-    }
+    //     for(let char in node.children) {
+    //         this.printWords(node.children[char], currentWord + char, result);
+    //     }
+    //     return result;
+    // }
 
 }
 const the = new trie()
@@ -98,4 +98,4 @@ the.insert('elevator')
 the.insert('flight')
 
 console.log('Result =',the.autocomplete('a'));
-console.log("qqwq",the.printWords());
+// console.log("qqwq",the.printWords());
