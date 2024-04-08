@@ -47,18 +47,18 @@ class trie{
             node=node.childrens[char]
         }
         return node
-    }
+    }   
 
-    collectSuggestions(node,sample=[]){
+collectSuggestions(node,sample=[]){
     if(node.EndWord){
        sample.push(...node.suggestion)
     }
     for(const char in node.childrens){
-        this.collectSuggestions(node.childrens[char],)
+        this.collectSuggestions(node.childrens[char],sample)
     }
     return sample
-
-    }
+}
+    
     
 }
 const tire = new trie()
