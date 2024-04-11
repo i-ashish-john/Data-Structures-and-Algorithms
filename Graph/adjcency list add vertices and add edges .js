@@ -1,3 +1,4 @@
+// has ,add,delete are the predefined method in the set () data structure 
 class graph{
     constructor(){
         this.adjacencyList={}
@@ -43,6 +44,23 @@ class graph{
           return  false
         }
     }
+    removeConnection(firstVertex,secondVertex){
+        this.adjacencyList[firstVertex].delete(secondVertex)
+        this.adjacencyList[secondVertex].delete(firstVertex)
+    }
+    removeVertex(vertex){// first removing the connection to other vertex then removing the single vertex 
+       if(!this.adjacencyList[vertex]) {
+        return
+       }
+       //inside the memmory of the this.adjacency[vertex]=it were 
+       //spreading the each of the values inside to the value
+        for(let value of this.adjacencyList[vertex]){
+            this.removeConnection(vertex,value)
+        }
+        delete this.adjacencyList[vertex]
+
+    }
+
     
     
 }
@@ -56,8 +74,14 @@ findAdjecency.addVertex('D')
 findAdjecency.addEdges('A','B')
 findAdjecency.addEdges('B','C')
 findAdjecency.addEdges('C','D')
+findAdjecency.addEdges('A','D')
+
 
 
 findAdjecency.print()
-console.log(findAdjecency.hasEdge('A','C'))
+console.log(findAdjecency.hasEdge('A','D'))
 
+// findAdjecency.removeConnection('C','B')
+
+findAdjecency.removeVertex('A')
+findAdjecency.print()
