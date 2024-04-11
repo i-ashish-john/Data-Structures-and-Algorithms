@@ -57,6 +57,7 @@ class graph{
         for(let value of this.adjacencyList[vertex]){
             this.removeConnection(vertex,value)
         }
+        //after removed the connection between the vertexes ,removing the particular vertex
         delete this.adjacencyList[vertex]
 
     }
