@@ -17,7 +17,7 @@ class graph{
             this.addVertex(vertex2)
         }
 
-        this.adjacencyList[vertex1].add(vertex2)
+        this.adjacencyList[vertex1].add(vertex2)   //adding the two vertices to the  main object in the main head
         this.adjacencyList[vertex2].add(vertex1)
         
         
@@ -33,6 +33,14 @@ class graph{
 
             const adjacentVertices=[...this.adjacencyList[node]]
             console.log(node,'=',adjacentVertices)
+        }
+    }
+    hasEdge(FirstVertices,SecondVertices){//this for checking thier is edges between to vertices
+        if(this.adjacencyList[FirstVertices].has(SecondVertices)&&this.adjacencyList[SecondVertices].has(FirstVertices)){
+            return true
+        }
+        else{
+          return  false
         }
     }
     
@@ -51,4 +59,5 @@ findAdjecency.addEdges('C','D')
 
 
 findAdjecency.print()
+console.log(findAdjecency.hasEdge('A','C'))
 
