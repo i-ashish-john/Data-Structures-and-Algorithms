@@ -30,8 +30,9 @@ class graph{
     // }
     print(){
         for(const node in this.adjacencyList){
-            const adjencetVerticies=this.adjacencyList[node]
-            console.log('result' ,adjencetVerticies)
+
+            const adjacentVertices=[...this.adjacencyList[node]]
+            console.log(node,'=',adjacentVertices)
         }
     }
     
