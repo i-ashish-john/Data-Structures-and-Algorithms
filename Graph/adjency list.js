@@ -5,3 +5,7 @@ adjecnyList={
 }
 
 console.log(adjecnyList['B']);
+
+
+
+
