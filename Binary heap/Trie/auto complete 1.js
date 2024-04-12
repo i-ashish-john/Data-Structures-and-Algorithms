@@ -49,7 +49,7 @@ class trie{
         return node
     }   
 
-collectSuggestions(node,sample=[]){
+collectSuggestions(node,sample=[]){ 
     if(node.EndWord){
        sample.push(...node.suggestion)
     }
