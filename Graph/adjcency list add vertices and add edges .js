@@ -58,11 +58,76 @@ class graph{
             this.removeConnection(vertex,value)
         }
         //after removed the connection between the vertexes ,removing the particular vertex
-        delete this.adjacencyList[vertex]
+        delete this.adjacencyList[vertex]               
 
     }
 
- 
+//     bfs(startVertex) {
+//     const visited = new Set();
+//     const queue = [startVertex];
+//     visited.add(startVertex);
+
+//     while (queue.length > 0) {
+//       const vertex = queue.shift();
+//       console.log(vertex);
+
+//     if(this.adjacencyList[vertex]){
+
+//         for (const neighbor of this.adjacencyList[vertex]){
+//         if (!visited.has(neighbor)){
+//             visited.add(neighbor);
+//             queue.push(neighbor);
+//          }              
+//         }
+//       }
+//     }
+//   }
+// bfs(startVertex) {
+//     const visited = new Set();
+//     console.log(visited)
+//     const queue = [startVertex];
+//     visited.add(startVertex);
+
+// /////
+//     while (queue.length > 0) {
+//         const vertex = queue.shift();
+//         console.log('vertex =',vertex);
+
+//         for (const neighbor of this.adjacencyList[vertex]) {
+//             // let store= this.adjacencyList[vertex]
+//             // console.log("store adj :",store);
+
+//             if (!visited.has(neighbor)) {   
+//                let result= visited.add(neighbor);
+//                console.log('result =',result);
+//                 queue.push(neighbor);
+//             }
+
+//         }
+//     }
+///
+bfs(vertex){
+  let queue=[vertex]
+  let result=[]
+  let object={}
+//   object[vertex]=true
+
+
+  while(queue.length){
+     let current=queue.shift()
+     result.push(current)
+
+     this.adjacencyList[current].forEach(neighbour => {
+        if(!object[neighbour]){
+            // visited[neighbour]=true
+            queue.push(neighbour)
+        }
+     });
+     console.log(result)
+  }
+
+}
+
     
 }
 const findAdjecency= new graph()
@@ -84,5 +149,20 @@ console.log(findAdjecency.hasEdge('A','D'))
 
 // findAdjecency.removeConnection('C','B')
 
-findAdjecency.removeVertex('A')
-findAdjecency.print()
+// findAdjecency.removeVertex('A')
+// findAdjecency.print()
+
+console.log('Breadth-First Search:');
+findAdjecency.bfs('A');
+// findAdjecency.print()
+
+// A -----> B
+// ^       / \
+// |      /   \
+// |     /     \
+// |    /       \
+// |   /         \
+// |  /           \
+// | /             \
+// v/               v
+// D <-------------- C
