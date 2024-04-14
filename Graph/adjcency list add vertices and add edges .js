@@ -61,58 +61,11 @@ class graph{
         delete this.adjacencyList[vertex]               
 
     }
-
-//     bfs(startVertex) {
-//     const visited = new Set();
-//     const queue = [startVertex];
-//     visited.add(startVertex);
-
-//     while (queue.length > 0) {
-//       const vertex = queue.shift();
-//       console.log(vertex);
-
-//     if(this.adjacencyList[vertex]){
-
-//         for (const neighbor of this.adjacencyList[vertex]){
-//         if (!visited.has(neighbor)){
-//             visited.add(neighbor);
-//             queue.push(neighbor);
-//          }              
-//         }
-//       }
-//     }
-//   }
-// bfs(startVertex) {
-//     const visited = new Set();
-//     console.log(visited)
-//     const queue = [startVertex];
-//     visited.add(startVertex);
-
-// /////
-//     while (queue.length > 0) {
-//         const vertex = queue.shift();
-//         console.log('vertex =',vertex);
-
-//         for (const neighbor of this.adjacencyList[vertex]) {
-//             // let store= this.adjacencyList[vertex]
-//             // console.log("store adj :",store);
-
-//             if (!visited.has(neighbor)) {   
-//                let result= visited.add(neighbor);
-//                console.log('result =',result);
-//                 queue.push(neighbor);
-//             }
-
-//         }
-//     }
-///
 bfs(vertex){
-  let queue=[vertex]
+  let queue=[vertex]   
   let result=[]
   let object={}
   object[vertex]=true
-
-
   while(queue.length>0){
      let current=queue.shift()
      result.push(current)
@@ -122,7 +75,7 @@ bfs(vertex){
             object[neighbour]=true
             queue.push(neighbour)
         }
-     });
+     })
   }
   console.log(result)
 
@@ -137,11 +90,14 @@ dfs(startVertex){
         if(!vertex) return null
         object[vertex]=true
         stack.push(vertex)
+
         adjacency[vertex].forEach(neighbour=>{
+
             if(!object[neighbour]){
               depth(neighbour)
                  
             }
+            
         })
     }
 
