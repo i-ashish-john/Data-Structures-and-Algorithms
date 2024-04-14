@@ -110,21 +110,43 @@ bfs(vertex){
   let queue=[vertex]
   let result=[]
   let object={}
-//   object[vertex]=true
+  object[vertex]=true
 
 
-  while(queue.length){
+  while(queue.length>0){
      let current=queue.shift()
      result.push(current)
 
      this.adjacencyList[current].forEach(neighbour => {
         if(!object[neighbour]){
-            // visited[neighbour]=true
+            object[neighbour]=true
             queue.push(neighbour)
         }
      });
-     console.log(result)
   }
+  console.log(result)
+
+
+}
+dfs(startVertex){
+    let stack=[]
+    let object={}
+    let adjacency= this.adjacencyList
+
+   function depth(vertex){
+        if(!vertex) return null
+        object[vertex]=true
+        stack.push(vertex)
+        adjacency[vertex].forEach(neighbour=>{
+            if(!object[neighbour]){
+              depth(neighbour)
+                 
+            }
+        })
+    }
+
+    depth(startVertex)
+        console.log("r",stack);
 
 }
 
@@ -153,7 +175,7 @@ console.log(findAdjecency.hasEdge('A','D'))
 // findAdjecency.print()
 
 console.log('Breadth-First Search:');
-findAdjecency.bfs('A');
+findAdjecency.dfs('A');
 // findAdjecency.print()
 
 // A -----> B
