@@ -20,7 +20,7 @@ class Trie {
       node = node.children[char];
       // console.log("iiuit",node);
     }
-    node.isEndOfWord = true;
+    node.isEndOfWord = true; 
     node.suggestions.push(word); // Store the word for autocomplete
   }
 
@@ -57,7 +57,7 @@ class Trie {
   findNode(prefix) {
     let node = this.root;
 
-    for (const char of prefix) {
+    for (const char of prefix) {  
 
       if (!node.children[char]) {
         return null;
@@ -68,9 +68,9 @@ class Trie {
 
     return node;
   }
-
+        
   collectSuggestions(node, suggestions = []) {
-  console.log("THe node is =",node);
+  // console.log("THe node is =",node.value);
     if (node.isEndOfWord) {
       suggestions.push(...node.suggestions);
     }

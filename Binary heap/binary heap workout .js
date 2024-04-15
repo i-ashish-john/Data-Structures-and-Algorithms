@@ -16,7 +16,7 @@ class maxHeap{
       [this.heap[index],this.heap[parentNode]]=[this.heap[parentNode],this.heap[index]]
        
        this.heapifyUp(parentNode)//recursilvely call this method
-
+      
       }
 
       delete(){
@@ -31,6 +31,7 @@ class maxHeap{
         const rightChildIndex=2*indices+2
 
         let rootvalue=indices
+        
         if(leftChildIndex<this.heap.length && this.heap[leftChildIndex]>this.heap[rootvalue]){
             rootvalue=leftChildIndex
         }

@@ -6,7 +6,7 @@ class Node {
     }
   }
   
-  class BinarySearch {
+  class BinarySearch { 
     constructor() {
       this.root = null;
     }
@@ -35,7 +35,7 @@ class Node {
         }
       }
     }
-  
+    
     search(root, value) {
       if (!root) {
         return false;
@@ -49,6 +49,7 @@ class Node {
       }
     }
   
+
     levelOrder(root) {
       if (!root) {
         return;
@@ -83,3 +84,6 @@ class Node {
   bst.insert(3);
   bst.insert(7);
   bst.levelOrder(bst.root);
+
+  console.log( bst.search(7));
+ 
