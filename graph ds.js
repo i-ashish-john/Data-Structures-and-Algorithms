@@ -14,7 +14,7 @@ addVertex(vertex){
         this.addVertex(vertex1)
     }
     if(!this.adjacencyList[vertex2]){
-       this.addVertex(vertex2)
+       this.addVertex(vertex2) 
     }
     
    }
