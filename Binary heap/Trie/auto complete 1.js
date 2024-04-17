@@ -4,7 +4,7 @@ class  Node{
    this.EndWord=false
    this.suggestion=[]
     }
-}
+} 
 
 class trie{
     constructor(){
