@@ -5,14 +5,13 @@ class  Node{
    this.suggestion=[]
     }
 } 
-
 class trie{
     constructor(){
         this.root=new Node()
 
     }
 
-    insert(word){
+    insert(word){ 
         if(word.length===0){
             return
         }
