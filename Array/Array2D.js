@@ -18,4 +18,4 @@ for(let i=0;i<array2D.length;i++){
         }
     }
 }
-console.log('count of the zero is = ',count);
+console.log('count of zero is  = ',count);
