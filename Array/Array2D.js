@@ -6,6 +6,7 @@
 
 const array2D=[[0,1,1],[0,0,0],[1,1,0]]
 
+
 let count = 0;
 let value=[]
 
