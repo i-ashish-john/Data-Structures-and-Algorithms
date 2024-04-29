@@ -10,6 +10,7 @@ let count = 0;
 let value=[]
 
 
+
 for(let i=0;i<array2D.length;i++){
 
     const value = array2D[i]
